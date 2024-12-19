@@ -1,0 +1,10 @@
+command lines:
+1.docker run -it --name looper sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+2. go into container: 
+	docker exec -it looper bash
+3.check curl: curl helsinki.fi
+4. if missing -> install
+	- apt-get update
+	- apt-get -y install curl
+5. check curl: curl --version
+6. test: curl Helsinki.fi
