@@ -1,0 +1,5 @@
+1. docker ps -a / docker images
+2. remove unuse container/image:
+ - docker rm c1 c2
+ - docker rmi i1 i2
+3. check
