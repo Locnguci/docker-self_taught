@@ -1,0 +1,6 @@
+command lines:
+1.docker pull  devopsdockeruh/simple-web-service:ubuntu
+2.docker run -it -d --rm --name demo  devopsdockeruh/simple-web-service:ubuntu
+3.docker exec -it demo bash
+4.tail -f ./text.log
+5. secret message: 'You can find the source code here: https://github.com/docker-hy'
