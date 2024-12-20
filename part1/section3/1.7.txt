@@ -1,0 +1,34 @@
+1.script.sh:
+while true
+do
+  echo "Input website:"
+  read website; echo "Searching.."
+  sleep 1; curl http://$website
+done
+
+2. Dockerfile                                                                                             # Start from the alpine image that is smaller but no fancy tools
+FROM ubuntu:22.04
+
+#update and install curl
+RUN apt-get update && apt-get -y install curl
+
+# Use /usr/src/app as our workdir. The following instructions will be executed in this location.
+WORKDIR /usr/src/app
+
+# Copy the hello.sh file from this directory to /usr/src/app/ creating /usr/src/app/hello.sh
+COPY script.sh .
+
+# Alternatively, if we skipped chmod earlier, we can add execution permissions during the build.
+RUN chmod +x script.sh
+
+# When running docker run the command will be ./hello.sh
+CMD ["./script.sh"]
+
+3.Build image
+  docker build -t website .
+
+4. Run image
+  docker run -it website
+* if do not use -it, it'll not allow you to input so it run auto and skip input step
+
+5. test with input: helsinki.fi

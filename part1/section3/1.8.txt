@@ -1,0 +1,9 @@
+1.Dockerfile
+FROM devopsdockeruh/simple-web-service:alpine
+
+CMD server
+
+2.build image
+	docker build -t web-server .
+3. run container
+	docker run web-server

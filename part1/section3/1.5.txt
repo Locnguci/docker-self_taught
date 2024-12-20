@@ -1,0 +1,7 @@
+1. docker run --name alpine devopsdockeruh/simple-web-service:alpine
+2. open new termial and access to alpine terminal
+  -> docker exec -it alpine sh
+3.get message
+	tail text.log
+ -> message: 'You can find the source code here: https://github.com/docker-hy'
+same like in ubuntu container
